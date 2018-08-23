@@ -6,7 +6,7 @@ directory = dir('flight_path_data-v2');
 file_name = directory(2+1).name;
 
 %data = csvread(strcat('flight_path_data-v2/','flight_path_data1534452411.csv'));
-data = csvread(strcat('flight_path_data-v3/','flight_path_data1534865021.csv'));
+data = csvread(strcat('flight_path_data-v3/','flight_path_data1534867046.csv'));
 figure
 alt = data(:,4);
 x_vel = data(:,8);
@@ -20,6 +20,196 @@ plot(z_vel,'o')
 legend('z','xv','yv','zv')
 %end
 y = zeros(length(alt),1);
+
+
+
+% flight_path_data1534867046
+y(1:102) = 1;
+y(103:151) = 2;
+y(152:203) = 3;
+y(204:802) = 4;
+y(803:866) = 5;
+y(867:end) = 1;
+
+plot(y)
+x = [alt x_vel y_vel z_vel];
+dataset15 = [x y];
+csvwrite('dataset15.csv', dataset15)
+
+
+
+% % flight_path_data1534866750
+% y(1:123) = 1;
+% y(124:177) = 2;
+% y(178:207) = 3;
+% y(208:292) = 4;
+% y(293:306) = 3;
+% y(307:389) = 4;
+% y(390:405) = 3;
+% y(406:483) = 4;
+% y(484:509) = 3;
+% y(510:804) = 4;
+% y(805:887) = 5;
+% y(888:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset14 = [x y];
+% csvwrite('dataset14.csv', dataset14)
+
+
+
+% % flight_path_data1534866317
+% y(1:101) = 1;
+% y(102:147) = 2;
+% y(148:207) = 3;
+% y(208:802) = 4;
+% y(803:857) = 5;
+% y(858:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset13 = [x y];
+% csvwrite('dataset13.csv', dataset13)
+
+
+% % flight_path_data1534866229
+% y(1:103) = 1;
+% y(104:159) = 2;
+% y(160:207) = 3;
+% y(208:291) = 4;
+% y(292:309) = 3;
+% y(310:488) = 4;
+% y(489:507) = 3;
+% y(508:803) = 4;
+% y(804:885) = 5;
+% y(886:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset12 = [x y];
+% csvwrite('dataset12.csv', dataset12)
+
+
+% % flight_path_data1534866115
+% y(1:108) = 1;
+% y(109:159) = 2;
+% y(160:207) = 3;
+% y(208:802) = 4;
+% y(803:847) = 5;
+% y(848:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset11 = [x y];
+% csvwrite('dataset11.csv', dataset11)
+
+
+
+
+% % flight_path_data1534865922
+% y(1:103) = 1;
+% y(104:140) = 2;
+% y(141:204) = 3;
+% y(205:803) = 4;
+% y(804:852) = 5;
+% y(853:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset10 = [x y];
+% csvwrite('dataset10.csv', dataset10)
+
+
+% % flight_path_data1534865763
+% y(1:103) = 1;
+% y(104:147) = 2;
+% y(148:205) = 3;
+% y(206:487) = 4;
+% y(488:505) = 3;
+% y(506:801) = 4;
+% y(802:853) = 5;
+% y(854:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset9 = [x y];
+% csvwrite('dataset9.csv', dataset9)
+
+
+
+
+
+% % flight_path_data1534865685
+% y(1:104) = 1;
+% y(105:153) = 2;
+% y(154:209) = 3;
+% y(210:478) = 4;
+% y(479:510) = 3;
+% y(511:803) = 4;
+% y(804:862) = 5;
+% y(863:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset8 = [x y];
+% csvwrite('dataset8.csv', dataset8)
+
+
+
+% % flight_path_data1534865590
+% y(1:101) = 1;
+% y(102:157) = 2;
+% y(158:204) = 3;
+% y(205:483) = 4;
+% y(484:508) = 3;
+% y(509:801) = 4;
+% y(802:868) = 5;
+% y(869:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset7 = [x y];
+% csvwrite('dataset7.csv', dataset7)
+
+% % flight_path_data1534865221
+% y(1:104) = 1;
+% y(105:169) = 2;
+% y(170:207) = 3;
+% y(208:802) = 4;
+% y(803:872) = 5;
+% y(873:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset6 = [x y];
+% csvwrite('dataset6.csv', dataset6)
+
+
+
+
+
+
+
+
+
+
+% % flight_path_data1534865021
+% y(1:104) = 1;
+% y(105:155) = 2;
+% y(156:206) = 3;
+% y(207:803) = 4;
+% y(804:837) = 5;
+% y(838:end) = 1;
+% 
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset5 = [x y];
+% csvwrite('dataset5.csv', dataset5)
+
+
+
+
 
 % % flight_path_data1534864584
 % y(1:106) = 1;
