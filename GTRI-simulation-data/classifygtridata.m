@@ -1,7 +1,7 @@
 clear all;
 close all;
 
-dataset = csvread('gazeboSimulationData.csv');
+dataset = csvread('dataset.csv');
 trainacc = zeros(1,9);
 testacc = trainacc;
 
@@ -13,8 +13,8 @@ for i=1:9
     data_partision = 0.1*i;
     
     
-    X = dataset(:,1:4);
-    Y = dataset(:,end);
+    X = dataset(:,2:10);
+    Y = dataset(:,11);
     
     shaffl = randperm(length(Y));
     trainsample = fix(data_partision*length(shaffl));
