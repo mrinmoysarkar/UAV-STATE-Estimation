@@ -55,8 +55,29 @@ end
 
 partision = 0.1:0.1:0.9;
 
-plot(partision,trainacc);
+plot(partision,trainacc*100,'--v');
 hold on;
-plot(partision,testacc);
+plot(partision,testacc*100,'--^');
+xlabel('Fraction Of data used for training')
+ylabel('Percent accuracy')
 
 legend('trainacc','testacc')
+
+% data = csvread(strcat('C:\Users\msarkar\Documents\git-repos\UAV-STATE-Estimation\IntelDrone-data\flightdata-8-28-2018/','flight_path_data1535484789.csv'));
+% alt = data(:,4);
+% x_vel = data(:,8);
+% y_vel = data(:,9);
+% z_vel = data(:,10);
+% 
+% X = [alt x_vel y_vel z_vel];
+% Y = predict(dt,X);
+% 
+% figure
+% plot(alt,'o')
+% hold on
+% plot(x_vel,'o')
+% plot(y_vel,'o')
+% plot(z_vel,'o')
+% 
+% plot(Y,'o')
+% legend('z','xv','yv','zv','y')
