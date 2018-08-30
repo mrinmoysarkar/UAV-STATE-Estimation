@@ -30,7 +30,7 @@ y(152:203) = 3;
 y(204:802) = 4;
 y(803:866) = 5;
 y(867:end) = 1;
-
+axis([0 1010 -3 2])
 plot(y)
 x = [alt x_vel y_vel z_vel];
 dataset15 = [x y];
