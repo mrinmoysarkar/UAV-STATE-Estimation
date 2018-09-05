@@ -23,18 +23,18 @@ y = zeros(length(alt),1);
 
 
 
-% flight_path_data1534867046
-y(1:102) = 1;
-y(103:151) = 2;
-y(152:203) = 3;
-y(204:802) = 4;
-y(803:866) = 5;
-y(867:end) = 1;
-axis([0 1010 -3 2])
-plot(y)
-x = [alt x_vel y_vel z_vel];
-dataset15 = [x y];
-csvwrite('dataset15.csv', dataset15)
+% % flight_path_data1534867046
+% y(1:102) = 1;
+% y(103:151) = 2;
+% y(152:203) = 3;
+% y(204:802) = 4;
+% y(803:866) = 5;
+% y(867:end) = 1;
+% axis([0 1010 -3 2])
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% dataset15 = [x y];
+% csvwrite('dataset15.csv', dataset15)
 
 
 
