@@ -12,11 +12,11 @@ alt = data(:,4);
 x_vel = data(:,8);
 y_vel = data(:,9);
 z_vel = data(:,10);
-plot(alt,'o')
+plot(alt(2000:end),'o')
 hold on
-plot(x_vel,'o')
-plot(y_vel,'o')
-plot(z_vel,'o')
+plot(x_vel(2000:end),'o')
+plot(y_vel(2000:end),'o')
+plot(z_vel(2000:end),'o')
 legend('z','xv','yv','zv')
 %end
 y = zeros(length(alt),1);
