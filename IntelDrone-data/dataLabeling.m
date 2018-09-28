@@ -12,13 +12,19 @@ alt = data(:,4);
 x_vel = data(:,8);
 y_vel = data(:,9);
 z_vel = data(:,10);
+
+alt = alt/max(alt);
+x_vel = x_vel/max(x_vel);
+y_vel = y_vel/max(y_vel);
+z_vel = z_vel/max(z_vel);
+
 plot(alt(2000:end),'o')
 hold on
 plot(x_vel(2000:end),'o')
 plot(y_vel(2000:end),'o')
 plot(z_vel(2000:end),'o')
 legend('z','xv','yv','zv')
-%end
+
 y = zeros(length(alt),1);
 
 

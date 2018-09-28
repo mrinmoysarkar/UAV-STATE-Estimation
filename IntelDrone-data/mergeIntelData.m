@@ -1,7 +1,8 @@
 clear all;
 close all;
 
-directory = dir('intel_labeled_data');
+%directory = dir('intel_labeled_data');
+directory = dir('intel_labeled_data_N');
 dataset = [];
 for i=1:2
     file_name = directory(2+i).name;
@@ -10,4 +11,4 @@ for i=1:2
     dataset = [dataset;data];
 end
 
-csvwrite('intelDroneData.csv', dataset)
+csvwrite('intelDroneDataN.csv', dataset)
