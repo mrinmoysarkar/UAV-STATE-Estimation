@@ -1,17 +1,22 @@
 clear all;
 close all;
 
-directory = dir('flight_path_data-v2');
+global yindex
+yindex = 0;
+directory = dir('flight_path_data-v4');
 %for i=1:10
 file_name = directory(2+1).name;
 
 %data = csvread(strcat('flight_path_data-v2/','flight_path_data1534452411.csv'));
-data = csvread(strcat('flight_path_data-v3/','flight_path_data1534867046.csv'));
-figure
+data = csvread(strcat('flight_path_data-v4/','iris.csv'));
+i1 = 13410;
+i2 = 26020;
+fig = figure;
 alt = data(:,4);
 x_vel = data(:,8);
 y_vel = data(:,9);
 z_vel = data(:,10);
+
 plot(alt,'o')
 hold on
 plot(x_vel,'o')
@@ -19,7 +24,88 @@ plot(y_vel,'o')
 plot(z_vel,'o')
 legend('z','xv','yv','zv')
 %end
+dcm_obj = datacursormode(fig);
+set(dcm_obj,'UpdateFcn',@myupdatefcn)
 y = zeros(length(alt),1);
+%xlim([i1 i2])
+indx = 1;
+while 1
+    in = input('input label: ');
+    if in == 7
+        break;
+    end
+    y(yindex(indx)+1:yindex(indx+1)) = in;
+    indx = indx + 1;
+end
+y(yindex(indx)+1:end) = 1;
+plot(y)
+
+% % iris
+% x = [alt x_vel y_vel z_vel];
+% datasetiris = [x y];
+% csvwrite('datasetiris.csv', datasetiris)
+
+
+
+
+% % solo
+% y(1:1481) = 1;
+% y(1482:1777) = 2;
+% y(1778:2124) = 3;
+% y(2125:2434) = 4;
+% y(2435:2679) = 3;
+% y(2680:3084) = 4;
+% y(3085:3271) = 3;
+% y(3272:3708) = 4;
+% y(3709:3896) = 3;
+% y(3897:4255) = 4;
+% y(4256:4545) = 3;
+% y(4546:4905) = 4;
+% y(4906:5089) = 3;
+% y(5090:5518) = 4;
+% y(5519:5719) = 3;
+% y(5720:6011) = 5;
+% y(6012:6705) = 1;
+% 
+% y(6706:7466) = 1;
+% y(7467:7744) = 2;
+% y(7745:8081) = 3;
+% y(8082:8410) = 4;
+% y(8411:8668) = 3;
+% y(8669:9060) = 4;
+% y(9061:9285) = 3;
+% y(9286:9716) = 4;
+% y(9717:9890) = 3;
+% y(9891:10290) = 4;
+% y(10291:10490) = 3;
+% y(10491:10850) = 4;
+% y(10851:11080) = 3;
+% y(11081:11520) = 4;
+% y(11521:11700) = 3;
+% y(11701:12240) = 5;
+% 
+% y(12241:15500) = 1;
+% y(15501:15940) = 2;
+% y(15941:16120) = 3;
+% y(16121:16500) = 4;
+% y(16501:16720) = 3;
+% y(16721:17120) = 4;
+% y(17121:17320) = 3;
+% y(17321:17720) = 4;
+% y(17721:17910) = 3;
+% y(17911:18320) = 4;
+% y(18321:18540) = 3;
+% y(18541:18890) = 4;
+% y(18891:19110) = 3;
+% y(19111:19640) = 4;
+% y(19641:19750) = 3;
+% y(19751:20390) = 5;
+% 
+% y(20391:end) = 1;
+% plot(y)
+% x = [alt x_vel y_vel z_vel];
+% datasetsolo = [x y];
+% csvwrite('datasetsolo.csv', datasetsolo)
 
 
 
@@ -35,6 +121,16 @@ y = zeros(length(alt),1);
 % x = [alt x_vel y_vel z_vel];
 % dataset15 = [x y];
 % csvwrite('dataset15.csv', dataset15)
+
+
+
+
+
+
+
+
+
+
 
 
 
